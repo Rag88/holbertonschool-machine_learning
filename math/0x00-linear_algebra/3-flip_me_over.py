@@ -4,11 +4,9 @@
 
 def matrix_transpose(matrix):
     """ returns new matrix that is a transpose of the given 2D matrix """
-    matrix_transpose = []
-    for index, row in enumerate(matrix):
-        if index is 0:
-            for i in row:
-                matrix_transpose.append([])
-        for idx, i in enumerate(row):
-            matrix_transpose[idx].append(i)
-    return matrix_transpose
+    if type(matrix[0]) != list:
+        return [len(matrix)]
+    else:
+        new_matrix = [[matrix[j][i] for j in range(len(matrix))]
+                      for i in range(len(matrix[0]))]
+    return new_matrix
